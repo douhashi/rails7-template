@@ -28,7 +28,7 @@
 rspec_opts = {
   all_after_pass: false,
   all_on_start: false,
-  notify: true,
+  notification: false,
   failed_mode: :focus,
   cmd: 'bundle exec rspec --colour --format documentation --fail-fast' 
 }
