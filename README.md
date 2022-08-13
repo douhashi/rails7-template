@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## requirements
 
-Things you may want to cover:
+* asdf-vm
+* ruby
+* nodejs
+* yarn
+* direnv
+* docker and docker-compose
 
-* Ruby version
+## setup
 
-* System dependencies
+```
+cp .envrc.sample .envrc
+direnv allow
 
-* Configuration
+bundle install -j4
+yarn install
 
-* Database creation
+docker-compose up -d
 
-* Database initialization
+bin/rails db:migrate:reset
 
-* How to run the test suite
+bin/server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## guard
 
-* Deployment instructions
-
-* ...
+'''
+bin/guard
+'''
