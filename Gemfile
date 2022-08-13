@@ -53,6 +53,7 @@ group :development do
   gem 'rubocop-rspec', require: false
   gem 'rubocop-rubycw', require: false
 
+  gem 'brakeman'
   gem 'bundler-audit'
 end
 
