@@ -34,18 +34,61 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails', '~> 5.1.0'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'listen'
+  gem 'pgreset'
+  gem "rack-mini-profiler"
 
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-rubycw', require: false
 end
+
+# Test data
+gem 'factory_bot_rails'
+
+# Proccess management
+gem 'foreman'
+
+# Front-end framework
+gem 'vite_rails'
+
+# Pagination / Enum
+gem 'enumerize'
+gem 'kaminari'
+
+# Health check
+gem 'okcomputer'
+
+# Background jobs (Sidekiq)
+# gem 'redis-namespace'
+# gem 'sidekiq'
+
+# Authentication
+# gem 'devise'
+# gem 'devise-i18n'
+# gem 'omniauth'
+# gem 'omniauth-facebook'
+# gem 'omniauth-twitter'
+
+# Logging
+gem 'lograge'
+# gem 'logstash-logger'
+# gem 'logstash-event'
+
+# Exception notification
+# gem 'exception_notification'
+# gem 'slack-notifier'
+gem 'rollbar'
+
 
