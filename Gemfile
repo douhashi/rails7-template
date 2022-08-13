@@ -52,6 +52,8 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-rubycw', require: false
+
+  gem 'bundler-audit'
 end
 
 # Test data
