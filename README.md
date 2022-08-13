@@ -27,6 +27,6 @@ bin/server
 
 ## guard
 
-'''
+```
 bin/guard
-'''
+```
