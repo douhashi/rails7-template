@@ -16,6 +16,10 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 // windicss
 import 'virtual:windi.css'
 
+// Rails
+import * as Rails from '@rails/ujs'
+Rails.start()
+
 // Example: Load Rails libraries in Vite.
 //
 // import * as Turbo from '@hotwired/turbo'
