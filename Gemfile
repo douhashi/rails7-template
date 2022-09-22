@@ -76,6 +76,8 @@ gem 'okcomputer'
 # Background jobs (Sidekiq)
 # gem 'redis-namespace'
 # gem 'sidekiq'
+# gem 'sidekiq-scheduler'
+# gem 'sinatra', require: false
 
 # Authentication
 # gem 'devise'
