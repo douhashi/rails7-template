@@ -11,4 +11,8 @@ production:
   - critical
   - default
   - low
-
+# :schedule:
+#   sample:
+#     every: '1m'
+#     class: SampleJob
+# 
