@@ -13,9 +13,6 @@ console.log('Vite ⚡️ Rails')
 
 console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify.app/guide/rails')
 
-// windicss
-import 'virtual:windi.css'
-
 // Rails
 import * as Rails from '@rails/ujs'
 Rails.start()
