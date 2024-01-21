@@ -1,0 +1,4 @@
+<button type="button" class="<%= dynamic_classes %> drop-shadow text-white font-medium rounded-md space-x-1">
+  <%= render Atoms::TextComponent.new(size: @size, color: @color) do %><%= @label || content %><% end %>
+</button>
+

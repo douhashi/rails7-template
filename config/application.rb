@@ -57,5 +57,9 @@ module App
 
     # active_job
     # config.active_job.queue_adapter = :sidekiq
+
+    # view_component
+    config.view_component.default_preview_layout = 'component_preview'
+    config.view_component.preview_paths << Rails.root.join('app/components/previews')
   end
 end

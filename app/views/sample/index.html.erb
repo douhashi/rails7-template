@@ -1,3 +1,20 @@
-<div class="p-4">
+<section class="">
   <div class="rounded bg-blue-200 p-4">Hello TailwindCSS</div>
+</section>
+
+<%= component :atoms, :button, label: "テスト" %>
+
+<%= link_to '/lookbook', target: :blank do %>
+  <%= component :atoms, :button, label: "Open Component Catalog" %>
+<% end %>
+
+<%= component :atoms, :button, color: 'secondary' do %>
+    <i class="fas fa-dog"></i>
+    <span>テスト</span>
+<% end %>
+
+<div class='p-4'>
+  <%= component :atoms, :text, color: 'primary', size: 'small' do %>
+    text content
+  <% end %>
 </div>

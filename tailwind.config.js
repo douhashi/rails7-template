@@ -8,16 +8,45 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/assets/stylesheets/**/*.css',
     './app/views/**/*.{html,html.erb,erb}',
+    './app/components/**/*.{html,html.erb,erb,rb}',
     './app/javascript/components/**/*.js',
   ],
   theme: {
     fontFamily: {
-      'sans': ["BlinkMacSystemFont", "Avenir Next", "Avenir",
+      'sans': ["Noto Sans JP", "BlinkMacSystemFont", "Avenir Next", "Avenir",
         "Nimbus Sans L", "Roboto", "Noto Sans", "Segoe UI", "Arial", "Helvetica",
         "Helvetica Neue", "sans-serif"],
-      'mono': ["Consolas", "Menlo", "Monaco", "Andale Mono", "Ubuntu Mono", "monospace"]
+      'mono': ["Roboto Mono", "Consolas", "Menlo", "Monaco", "Andale Mono", "Ubuntu Mono", "monospace"]
     },
     extend: {
+      colors: {
+        "primary": {
+          "50": "#efe5fd",
+          "100": "#d4bff9",
+          "200": "#b794f6",
+          "300": "#9965f4",
+          "400": "#7e3ff2",
+          "500": "#6002ee",
+          "600": "#5300e8",
+          "700": "#3d00e0",
+          "800": "#1d00db",
+          "900": "#0000d6"
+        },
+        "secondary": {
+          "50": "#fcfcfc",
+          "100": "#f7f7f7",
+          "200": "#f2f2f2",
+          "300": "#eaeaea",
+          "400": "#c8c8c8",
+          "500": "#aaaaaa",
+          "600": "#808080",
+          "700": "#6c6c6c",
+          "800": "#4c4c4c",
+          "900": "#2a2a2a"
+        },
+        "on-primary": '#ffffff',
+        "on-secondary": '#ffffff'
+      }
     },
 
   },

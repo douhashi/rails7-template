@@ -55,6 +55,10 @@ group :development do
 
   gem 'brakeman'
   gem 'bundler-audit'
+
+  gem 'actioncable'
+  gem 'listen'
+  gem 'lookbook', '>= 2.2.0' # Component preview
 end
 
 # Test data
@@ -65,6 +69,9 @@ gem 'foreman'
 
 # Front-end framework
 gem 'vite_rails'
+
+# ViewComponent
+gem 'view_component'
 
 # Pagination / Enum
 gem 'enumerize'
