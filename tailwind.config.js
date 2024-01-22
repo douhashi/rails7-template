@@ -44,8 +44,12 @@ module.exports = {
           "800": "#4c4c4c",
           "900": "#2a2a2a"
         },
-        "on-primary": '#ffffff',
-        "on-secondary": '#ffffff'
+        "on": {
+          "primary": '#ffffff',
+          "secondary": '#ffffff',
+          "surface": '#000000'
+        },
+        "surface": '#efe5fd',
       }
     },
 
