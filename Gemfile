@@ -57,7 +57,6 @@ group :development do
   gem 'bundler-audit'
 
   gem 'actioncable'
-  gem 'listen'
   gem 'lookbook', '>= 2.2.0' # Component preview
 end
 
@@ -72,6 +71,7 @@ gem 'vite_rails'
 
 # ViewComponent
 gem 'view_component'
+gem 'view_component-contrib'
 
 # Pagination / Enum
 gem 'enumerize'
@@ -104,3 +104,5 @@ gem 'lograge'
 gem 'rollbar'
 
 
+
+gem "dry-initializer", "~> 3.1"

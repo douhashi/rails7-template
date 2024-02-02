@@ -103,6 +103,7 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     dry-cli (1.0.0)
+    dry-initializer (3.1.1)
     enumerize (2.7.0)
       activesupport (>= 3.2)
     erubi (1.12.0)
@@ -331,6 +332,7 @@ GEM
       rubocop-factory_bot (~> 2.22)
     rubocop-rubycw (0.1.6)
       rubocop (~> 1.0)
+    ruby-next-core (1.0.1)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     shellany (0.0.1)
@@ -346,6 +348,9 @@ GEM
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
+    view_component-contrib (0.2.2)
+      ruby-next-core (>= 0.15.0)
+      view_component
     vite_rails (3.0.17)
       railties (>= 5.1, < 8)
       vite_ruby (~> 3.0, >= 3.2.2)
@@ -374,6 +379,7 @@ DEPENDENCIES
   brakeman
   bundler-audit
   debug
+  dry-initializer (~> 3.1)
   enumerize
   factory_bot_rails
   foreman
@@ -399,6 +405,7 @@ DEPENDENCIES
   shoulda-matchers (~> 6.0)
   tzinfo-data
   view_component
+  view_component-contrib
   vite_rails
   web-console
 
