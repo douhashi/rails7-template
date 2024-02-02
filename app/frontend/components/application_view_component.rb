@@ -13,7 +13,6 @@ class ApplicationViewComponent < ViewComponentContrib::Base
     return super unless name.starts_with?(".")
 
     full_name = self.class.component_name + name.sub('.', '/')
-    p full_name
 
     super(full_name, ...)
   end
