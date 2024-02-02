@@ -2,9 +2,9 @@
 
 require "rails_helper"
 
-describe <%= class_name %>::Component do
+describe Example::Component do
   let(:options) { {} }
-  let(:component) { <%= class_name %>::Component.new(**options) }
+  let(:component) { Example::Component.new(**options) }
 
   subject { rendered_content }
 
