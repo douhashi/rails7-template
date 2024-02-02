@@ -1,23 +1,15 @@
-<section class="bg-surface">
-  <div class="rounded bg-blue-200 p-4">Hello TailwindCSS</div>
-</section>
+<%= component :organisms, :header %>
 
-<%= link_to '/lookbook', target: :blank do %>
-  <%= component(:atoms, :button, size: 'base') { 'Open Componet Catalog' } %>
-<% end %>
-
-<%= component :atoms, :button, color: 'secondary' do %>
-    <i class="fas fa-dog"></i>
-    <span>テスト</span>
-<% end %>
-
-<div class='p-4'>
-  <%= component :atoms, :text, color: 'primary', size: 'small' do %>
-    text content
-  <% end %>
-</div>
-
-<div class="w-96 h-96 bg-white justify-start items-start inline-flex -gap-32">
-  <div class="w-36 h-96 relative bg-indigo-950"></div>
-  <div class="w-96 h-96 relative bg-slate-200 rounded-3xl"></div>
+<div class="justify-start items-start inline-flex">
+  <%= component :organisms, :sidebar %>
+  <div class="grow shrink basis-0 self-stretch p-2 bg-blue-50 justify-start items-start gap-2.5 flex">
+    <div class="grow shrink basis-0 p-2.5 bg-indigo-100 rounded-md shadow flex-col justify-start items-start gap-2.5 inline-flex">
+      <div class="p-1 justify-start items-start gap-2.5 inline-flex">
+        <div class="text-indigo-950 text-lg font-medium font-['Inter'] leading-7">Section Header</div>
+      </div>
+      <div class="p-1 flex-col justify-start items-start gap-2.5 flex">
+        <div class="self-stretch text-indigo-950 text-base font-light font-['Inter'] leading-normal">Section Content Text. Section Content Text.</div>
+      </div>
+    </div>
+  </div>
 </div>

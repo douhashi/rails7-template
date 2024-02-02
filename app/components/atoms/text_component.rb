@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
 class Atoms::TextComponent < Atoms::Base
-  def initialize(color: 'primary', size: 'base')
-    @color = color
-    @size  = size
+  def initialize(color: 'primary', size: 'base', font: 'Noto Sans JP', weight: 'normal')
+    @color     = color
+    @size      = size
+    @font      = font
+    @weight    = weight
+  end
+
+  def dynamic_classes
+    [text_color_class, text_size_class, font_name_class, font_weight_class].compact.join(' ')
   end
 
   def text_color_class
@@ -48,7 +54,35 @@ class Atoms::TextComponent < Atoms::Base
     end
   end
 
-  def dynamic_classes
-    [text_color_class, text_size_class].compact.join(' ')
+  def font_name_class
+    case @font_name
+    when 'Inter'
+      'font-[Inter]'
+    else
+      ''
+    end
+  end
+
+  def font_weight_class
+    case @weight
+    when 'thin'
+      'font-thin'
+    when 'extralight'
+      'font-extralight'
+    when 'light'
+      'font-light'
+    when 'normal'
+      'font-normal'
+    when 'medium'
+      'font-medium'
+    when 'semibold'
+      'font-semibold'
+    when 'bold'
+      'font-bold'
+    when 'extrabold'
+      'font-extrabold'
+    when 'black'
+      'font-black'
+    end
   end
 end
