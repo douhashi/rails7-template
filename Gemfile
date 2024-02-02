@@ -103,6 +103,9 @@ gem 'lograge'
 # gem 'slack-notifier'
 gem 'rollbar'
 
+# Stimulus
+gem 'stimulus-rails'
+
 
 
 gem "dry-initializer", "~> 3.1"
