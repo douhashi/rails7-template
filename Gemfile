@@ -55,6 +55,9 @@ group :development do
 
   gem 'brakeman'
   gem 'bundler-audit'
+
+  gem 'actioncable'
+  gem 'lookbook', '>= 2.2.0' # Component preview
 end
 
 # Test data
@@ -65,6 +68,10 @@ gem 'foreman'
 
 # Front-end framework
 gem 'vite_rails'
+
+# ViewComponent
+gem 'view_component'
+gem 'view_component-contrib'
 
 # Pagination / Enum
 gem 'enumerize'
@@ -96,4 +103,9 @@ gem 'lograge'
 # gem 'slack-notifier'
 gem 'rollbar'
 
+# Stimulus
+gem 'stimulus-rails'
 
+
+
+gem "dry-initializer", "~> 3.1"

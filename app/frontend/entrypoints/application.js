@@ -13,9 +13,21 @@ console.log('Vite ⚡️ Rails')
 
 console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify.app/guide/rails')
 
-// Rails
-import * as Rails from '@rails/ujs'
-Rails.start()
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+
+// Stimulus
+import { Application } from '@hotwired/stimulus'
+import { registerControllers } from 'stimulus-vite-helpers'
+
+const application = Application.start()
+
+const genericControllers = import.meta.glob('../controllers/**/*_controller.js', { eager: true })
+registerControllers(application, genericControllers)
+
+const componentControllers = import.meta.glob('../components/**/controller.js', { eager: true })
+registerControllers(application, componentControllers)
 
 // Example: Load Rails libraries in Vite.
 //

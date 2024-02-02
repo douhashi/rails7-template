@@ -24,6 +24,8 @@ Gemspec:
 
 Lint:
   Enabled: true
+Lint/MissingSuper:
+  Enabled: false
 
 Performance:
   Enabled: true

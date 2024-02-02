@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render 'layouts/shared/head' %>
+  </head>
+
+  <body class="<%= params[:lookbook][:display][:bg_color] || 'bg-surface' %>">
+    <div class="p-10">
+      <%= yield %>
+    </div>
+  </body>
+</html>
