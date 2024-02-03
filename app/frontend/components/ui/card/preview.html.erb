@@ -1,4 +1,8 @@
 <%= component 'ui/card' do %>
-  <p class="text-gray-800 dark:text-white">this is a card content</p>
+  <%= component 'ui/card/header', title: 'Sample page' %>
+  <%= component 'ui/paragraph' do %>
+    This is card content.<br />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  <% end %>
 <% end %>
 
