@@ -3,7 +3,9 @@
 require "rails_helper"
 
 describe Ui::HeadingWithDescription::Component do
-  let(:options) { {} }
+  let(:title) { "Hello, world!" }
+  let(:description) { "This is a description" }
+  let(:options) { { title: title, description: description } }
   let(:component) { Ui::HeadingWithDescription::Component.new(**options) }
 
   subject { rendered_content }
@@ -11,6 +13,7 @@ describe Ui::HeadingWithDescription::Component do
   it "renders" do
     render_inline(component)
 
-    is_expected.to include "div"
+    is_expected.to have_text title
+    is_expected.to have_text description
   end
 end

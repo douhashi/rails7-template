@@ -34,8 +34,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'capybara'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 6.1.0'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 6.0'
 end
 

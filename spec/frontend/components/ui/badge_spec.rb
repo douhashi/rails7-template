@@ -2,15 +2,15 @@
 
 require "rails_helper"
 
-describe Ui::Header::Component do
+describe Ui::Badge::Component do
   let(:options) { {} }
-  let(:component) { Ui::Header::Component.new(**options) }
+  let(:component) { Ui::Badge::Component.new(**options) }
 
   subject { rendered_content }
 
   it "renders" do
     render_inline(component)
 
-    is_expected.to include "div"
+    is_expected.to include "span"
   end
 end

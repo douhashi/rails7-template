@@ -2,9 +2,9 @@
 
 require "rails_helper"
 
-describe "<%= file_name %> component" do
+describe "nav_item component" do
   it "default preview" do
-    visit("/dev/lookbook/inspect<%= File.join(class_path, file_name) %>/default")
+    visit("/dev/lookbook/inspectui/sidebar/nav_item/default")
 
     is_expected.to_not have_text "Failed"
     # click_on "Click me"

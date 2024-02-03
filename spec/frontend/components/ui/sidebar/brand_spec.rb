@@ -2,9 +2,9 @@
 
 require "rails_helper"
 
-describe Example::Component do
+describe Ui::Sidebar::Brand::Component do
   let(:options) { {} }
-  let(:component) { Example::Component.new(**options) }
+  let(:component) { Ui::Sidebar::Brand::Component.new(**options) }
 
   subject { rendered_content }
 
