@@ -391,7 +391,7 @@ DEPENDENCIES
   kaminari
   listen
   lograge
-  lookbook (>= 2.2.0)
+  lookbook
   okcomputer
   pg (~> 1.1)
   pgreset

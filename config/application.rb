@@ -65,5 +65,14 @@ module App
     # view_component
     config.view_component.default_preview_layout = 'component_preview'
     config.view_component.preview_paths << Rails.root.join('app/components/previews')
+
+    # lookbook
+    config.lookbook_enabled = ENV["LOOKBOOK_ENABLED"] == "true" || Rails.env.development?
+    require "lookbook" if config.lookbook_enabled
+    if config.lookbook_enabled
+      config.lookbook.preview_display_options = {
+        mode: ['light', 'dark']
+      }
+    end
   end
 end

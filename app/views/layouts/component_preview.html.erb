@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html>
+<% mode = params[:lookbook][:display][:mode] || 'dark' %>
+<% bg_color = mode == 'dark' ? 'bg-gray-800' : 'bg-white' %>
+
+<html class="">
   <head>
     <%= render 'layouts/shared/head' %>
+    <% if mode == 'dark' %>
+      <script>
+        document.documentElement.classList.add('dark')
+      </script>
+    <% else %>
+      <script>
+        document.documentElement.classList.remove('dark')
+      </script>
+    <% end %>
   </head>
 
-  <body class="<%= params[:lookbook][:display][:bg_color] || 'bg-surface' %>">
+  <body class="<%= bg_color %>">
     <div class="p-10">
       <%= yield %>
     </div>

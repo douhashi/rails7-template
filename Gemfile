@@ -57,7 +57,6 @@ group :development do
   gem 'bundler-audit'
 
   gem 'actioncable'
-  gem 'lookbook', '>= 2.2.0' # Component preview
 end
 
 # Test data
@@ -70,6 +69,7 @@ gem 'foreman'
 gem 'vite_rails'
 
 # ViewComponent
+gem 'lookbook', require: false
 gem 'view_component'
 gem 'view_component-contrib'
 
