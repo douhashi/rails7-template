@@ -3,11 +3,12 @@
 require "rails_helper"
 
 describe "<%= file_name %> component" do
+  subject { page }
+
   it "default preview" do
-    visit("/dev/lookbook/inspect<%= File.join(class_path, file_name) %>/default")
+    visit("/dev/lookbook/preview/<%= File.join(class_path, file_name) %>/default")
 
     is_expected.to_not have_text "Failed"
-    # click_on "Click me"
-    # is_expected.to have_text "Good-bye!"
   end
 end
+

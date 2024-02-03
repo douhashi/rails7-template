@@ -67,7 +67,7 @@ module App
     config.view_component.preview_paths << Rails.root.join('app/components/previews')
 
     # lookbook
-    config.lookbook_enabled = ENV["LOOKBOOK_ENABLED"] == "true" || Rails.env.development?
+    config.lookbook_enabled = ENV["LOOKBOOK_ENABLED"] == "true" || Rails.env.development? || Rails.env.test?
     require "lookbook" if config.lookbook_enabled
     if config.lookbook_enabled
       config.lookbook.preview_display_options = {
