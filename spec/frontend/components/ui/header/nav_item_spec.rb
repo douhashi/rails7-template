@@ -3,7 +3,9 @@
 require "rails_helper"
 
 describe Ui::Header::NavItem::Component do
-  let(:options) { {} }
+  let(:name) { "Google" }
+  let(:url) { "https://www.google.com" }
+  let(:options) { { name: name, url: url } }
   let(:component) { Ui::Header::NavItem::Component.new(**options) }
 
   subject { rendered_content }
@@ -11,6 +13,6 @@ describe Ui::Header::NavItem::Component do
   it "renders" do
     render_inline(component)
 
-    is_expected.to include "div"
+    is_expected.to include name
   end
 end
