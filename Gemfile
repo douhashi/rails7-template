@@ -61,6 +61,9 @@ group :development do
   gem 'actioncable'
 end
 
+# configuration
+gem 'config'
+
 # Test data
 gem 'factory_bot_rails'
 

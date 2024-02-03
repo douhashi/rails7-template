@@ -1,5 +1,7 @@
-<div class="flex items-center justify-start pt-6 ml-8">
-  <p class="text-xl font-bold dark:text-white uppercase">
-    <%= name %>
-  </p>
-</div>
+<%= link_to root_path, class: 'block' do %>
+  <div class="flex items-center justify-start py-6 ml-8">
+      <p class="text-xl font-bold dark:text-white uppercase">
+        <%= name %>
+      </p>
+  </div>
+<% end %>
