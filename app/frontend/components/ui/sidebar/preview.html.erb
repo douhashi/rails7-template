@@ -1,0 +1,14 @@
+<%= component 'ui/sidebar' do |component| %>
+  <% component.with_brand do %>
+    <%= component 'ui/sidebar/brand', name: 'Brand Name' %>
+  <% end %>
+
+  <% navigation_menus.each do |menu| %>
+    <% component.with_nav_item do %>
+      <% menu_items.each do |item| %>
+        <%= component 'ui/sidebar/nav_item', **item %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
