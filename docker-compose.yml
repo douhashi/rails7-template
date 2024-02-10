@@ -23,10 +23,10 @@ services:
       args:
         UID: ${HOST_UID}
         GID: ${HOST_GID}
-    tty: true
     depends_on:
-      - vite
-      - db
+      db:
+        condition: service_healthy
+    tty: true
     command: bin/rails s -b 0.0.0.0
     environment:
       - POSTGRES_HOST
@@ -40,8 +40,16 @@ services:
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
     restart: always
+    healthcheck:
+      test: "curl -f http://localhost:3000/okcomputer/all.json || exit 1"
+      interval: 5s
+      timeout: 3s
+      retries: 5
   vite:
     image: ${APP_IMAGE_NAME}
+    depends_on:
+      db:
+        condition: service_healthy
     command: bin/vite dev
     environment:
       - DEBUG='*vite*'
@@ -55,6 +63,11 @@ services:
     restart: always
   guard:
     image: ${APP_IMAGE_NAME}
+    depends_on:
+      db:
+        condition: service_healthy
+      chrome:
+        condition: service_healthy
     tty: true
     stdin_open: true
     command: bin/guard
@@ -73,7 +86,11 @@ services:
     ports:
       - '4444:4444'
     restart: always
-        
+    healthcheck:
+      test: "curl -f http://localhost:4444/status || exit 1"
+      interval: 5s
+      timeout: 3s
+      retries: 5
 
 #  mailcatcher:
 #    image: 'schickling/mailcatcher'

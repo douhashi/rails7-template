@@ -38,7 +38,7 @@ WORKDIR ${APP_PATH}
 
 # Install system dependencies
 RUN apt-get update && \
-  apt-get install -y sudo libpq-dev && \
+  apt-get install -y sudo libpq-dev curl && \
   addgroup --gid $GID nonroot && \
   adduser --uid $UID --gid $GID --disabled-password --gecos "" nonroot && \
   echo 'nonroot ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
@@ -72,7 +72,9 @@ RUN npm install
 COPY --chown=nonroot:nonroot . ${ROOT}
 
 COPY --chown=nonroot:nonroot ./docker/entrypoint.sh /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
 
+EXPOSE 3000
+ENTRYPOINT ["entrypoint.sh"]
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
+
 
