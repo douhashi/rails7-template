@@ -47,6 +47,8 @@ module App
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.generators do |g|
+      g.assets false
+      g.helper false
       g.test_framework :rspec,
                        fixtures: true,
                        view_specs: false,
@@ -63,5 +65,14 @@ module App
     # view_component
     config.view_component.default_preview_layout = 'component_preview'
     config.view_component.preview_paths << Rails.root.join('app/components/previews')
+
+    # lookbook
+    config.lookbook_enabled = ENV["LOOKBOOK_ENABLED"] == "true" || Rails.env.development? || Rails.env.test?
+    require "lookbook" if config.lookbook_enabled
+    if config.lookbook_enabled
+      config.lookbook.preview_display_options = {
+        mode: ['light', 'dark']
+      }
+    end
   end
 end

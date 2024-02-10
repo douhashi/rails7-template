@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Hoge</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= render partial: 'layouts/shared/head' %>
+
+    <script>
+      // dark mode
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
 
   <body class="">
-    <div class="w-full">
-      <%= yield %>
-    </div>
+
+    <main class="relative h-screen overflow-hidden bg-gray-100 dark:bg-gray-800">
+      <div class="flex items-start justify-between">
+        <%= component 'ui/sidebar' do |component| %>
+          <% component.with_brand do %>
+            <%= component 'ui/sidebar/brand', name: Settings.application.common.name %>
+          <% end %>
+
+          <% navigation_menus.each do |menu| %>
+            <% component.with_nav_item do %>
+              <%= component 'ui/sidebar/nav_item', **menu %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <div class="flex flex-col w-full md:space-y-4">
+          <%= component 'ui/global_action_panel' %>
+
+          <div class="h-screen px-4 pb-24 overflow-auto md:px-6">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </main>
+
   </body>
 </html>

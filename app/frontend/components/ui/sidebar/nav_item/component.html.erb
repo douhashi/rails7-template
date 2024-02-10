@@ -1,0 +1,11 @@
+<% active_class = active ? 'text-gray-800 transition-colors duration-200 border-l-4 border-purple-500 dark:text-white' : 'text-gray-400 transition-colors duration-200 border-l-4 border-transparent hover:text-gray-800 dark:hover:text-gray-300' %>
+
+<%= link_to url, class: "flex items-center justify-start w-full p-2 pl-6 my-2 #{active_class}" do %>
+  <span class="text-left w-6 text-center">
+    <i class="fas <%= icon %>"></i>
+  </span>
+  <span class="mx-2 text-sm font-normal">
+    <%= name %>
+  </span>
+<% end %>
+

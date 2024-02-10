@@ -1,3 +1,87 @@
-<div data-controller="sample">
-  <%= component :example %>
+<%= component 'ui/heading_with_description', title: 'Sample Page', description: 'Description text blah blah blah...' %>
+
+<div class="my-4">
+  <%= component 'ui/section_heading', title: 'One Column Grid' %>
+
+  <div class="grid grid-cols-1 gap-4 my-4">
+    <%= component 'ui/card' do %>
+      <%= component 'ui/card/header', title: 'Card Header' %>
+      <%= component 'ui/paragraph' do %>
+        This is card content.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= component 'ui/section_heading', title: 'Grid Layout' %>
+
+  <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-2 lg:grid-cols-3">
+    <%= component 'ui/card' do %>
+      <%= component 'ui/paragraph' do %>
+        This is a first card</p>
+      <% end %>
+    <% end %>
+    <%= component 'ui/card' do %>
+      <%= component 'ui/card/header', title: 'Card Header' %>
+      <%= component 'ui/paragraph' do %>
+        This is a second card
+      <% end %>
+    <% end %>
+    <%= component 'ui/card' do %>
+      <%= component 'ui/paragraph' do %>
+        This is a third card
+      <% end %>
+    <% end %>
+    <%= component 'ui/card' do %>
+      <%= component 'ui/paragraph' do %>
+        This is a fourth card
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= component 'ui/section_heading', title: 'Flexbox Layout' %>
+
+  <div class="flex flex-col items-start w-full my-6 space-y-4 md:space-x-4 md:space-y-0 md:flex-row">
+    <div class="w-full">
+      <%= component 'ui/card' do %>
+        <%= component 'ui/card/header', title: 'Card Header' %>
+        <%= component 'ui/paragraph' do %>
+          This is card content.<br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="w-full">
+      <%= component 'ui/card' do %>
+        <%= component 'ui/paragraph' do %>
+          Short card content.
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= component 'ui/section_heading', title: 'Card with progress' %>
+
+  <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-2 lg:grid-cols-3">
+    <%= component 'ui/card_with_progress', color: 'red', percentage: 30 do %>
+      <%= component 'ui/card/header', title: 'Danger' %>
+      <%= component 'ui/paragraph' do %>
+        This is a card
+      <% end %>
+    <% end %>
+    <%= component 'ui/card_with_progress', color: 'yellow', percentage: 60 do %>
+      <%= component 'ui/card/header', title: 'Warning' %>
+      <%= component 'ui/paragraph' do %>
+        This is a card
+      <% end %>
+    <% end %>
+    <%= component 'ui/card_with_progress', color: 'green', percentage: 90 do %>
+      <%= component 'ui/card/header', title: 'Good' %>
+      <%= component 'ui/paragraph' do %>
+        This is a card
+      <% end %>
+    <% end %>
+  </div>
 </div>
+

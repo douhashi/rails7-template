@@ -34,8 +34,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'capybara'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 6.1.0'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 6.0'
 end
 
@@ -57,8 +59,10 @@ group :development do
   gem 'bundler-audit'
 
   gem 'actioncable'
-  gem 'lookbook', '>= 2.2.0' # Component preview
 end
+
+# configuration
+gem 'config'
 
 # Test data
 gem 'factory_bot_rails'
@@ -70,6 +74,7 @@ gem 'foreman'
 gem 'vite_rails'
 
 # ViewComponent
+gem 'lookbook', require: false
 gem 'view_component'
 gem 'view_component-contrib'
 
@@ -105,7 +110,5 @@ gem 'rollbar'
 
 # Stimulus
 gem 'stimulus-rails'
-
-
 
 gem "dry-initializer", "~> 3.1"

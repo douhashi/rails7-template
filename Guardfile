@@ -26,11 +26,11 @@
 #
 
 rspec_opts = {
-  all_after_pass: false,
+  all_after_pass: true,
   all_on_start: false,
   notification: false,
   failed_mode: :focus,
-  cmd: 'bundle exec rspec --colour --format documentation --fail-fast' 
+  cmd: 'bundle exec rspec --colour --format documentation' 
 }
 
 guard :rspec, rspec_opts do
@@ -69,6 +69,7 @@ guard :rspec, rspec_opts do
   watch(rails.app_controller)  { "#{rspec.spec_dir}/requests" }
 
   watch(%r{^app/controllers/(.+)/}) { |m| ["spec/lib/#{m[1]}_spec.rb", "spec/requests/#{m[1]}_spec.rb"] }
+  watch(%r{^app/frontend/components/(.+)/}) { |m| ["spec/frontend/components/#{m[1]}_spec.rb"] }
 
   # Capybara features specs
   watch(rails.view_dirs)     { |m| rspec.spec.call("features/#{m[1]}") }
