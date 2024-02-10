@@ -2,7 +2,7 @@ require 'capybara/rspec'
 require 'selenium-webdriver'
 
 Capybara.register_driver :remote_chrome do |app|
-  url = ENV.fetch('SELENIUM_DRIVER_URL', 'http://localhost:4444')
+  url = ENV.fetch('SELENIUM_DRIVER_URL', 'http://localhost:9515')
   options = ::Selenium::WebDriver::Chrome::Options.new()
   options.add_argument('--headless')
   options.add_argument('--no-sandbox')
