@@ -9,6 +9,34 @@
       <%= component 'ui/paragraph' do %>
         This is card content.<br />
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+        <%= component 'ui/table' do %>
+          <%= component 'ui/table/thead' do %>
+            <%= component 'ui/table/row' do %>
+              <%= component('ui/table/th'){ '#' } %>
+              <%= component('ui/table/th'){ 'First Name' } %>
+              <%= component('ui/table/th'){ 'Last Name' } %>
+              <%= component('ui/table/th'){ 'Username' } %>
+            <% end %>
+          <% end %>
+
+          <%= component 'ui/table/tbody' do %>
+            <%= component 'ui/table/row' do %>
+              <%= component('ui/table/td'){ '#' } %>
+              <%= component('ui/table/td'){ 'First Name' } %>
+              <%= component('ui/table/td'){ 'Last Name' } %>
+              <%= component('ui/table/td'){ 'Username' } %>
+            <% end %>
+          <% end %>
+          <%= component 'ui/table/tbody' do %>
+            <%= component 'ui/table/row' do %>
+              <%= component('ui/table/td'){ '#' } %>
+              <%= component('ui/table/td'){ 'First Name' } %>
+              <%= component('ui/table/td'){ 'Last Name' } %>
+              <%= component('ui/table/td'){ 'Username' } %>
+            <% end %>
+          <% end %>
+        <% end %>
       <% end %>
     <% end %>
   </div>
@@ -48,6 +76,7 @@
         <%= component 'ui/paragraph' do %>
           This is card content.<br />
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
         <% end %>
       <% end %>
     </div>

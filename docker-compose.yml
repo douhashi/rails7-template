@@ -15,6 +15,11 @@ services:
       interval: 5s
       timeout: 3s
       retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+        max-file: 1
   app:
     image: ${APP_IMAGE_NAME}
     build:
@@ -40,6 +45,11 @@ services:
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
     restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: 3m
+        max-file: 1
   vite:
     image: ${APP_IMAGE_NAME}
     depends_on:
@@ -59,6 +69,11 @@ services:
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
     restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+        max-file: 1
   guard:
     image: ${APP_IMAGE_NAME}
     depends_on:
@@ -79,6 +94,11 @@ services:
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
     restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+        max-file: 1
   chrome:
     image: selenium/standalone-chrome
     ports:
@@ -89,6 +109,8 @@ services:
       interval: 5s
       timeout: 3s
       retries: 5
+    logging:
+      driver: none
 
 #  mailcatcher:
 #    image: 'schickling/mailcatcher'
