@@ -32,6 +32,7 @@ services:
     volumes:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
+      - node_modules_data:/home/nonroot/app/node_modules
   vite:
     image: ${APP_IMAGE_NAME}
     command: bin/vite dev
@@ -43,6 +44,7 @@ services:
     volumes:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
+      - node_modules_data:/home/nonroot/app/node_modules
   guard:
     image: ${APP_IMAGE_NAME}
     tty: true
@@ -56,6 +58,7 @@ services:
     volumes:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
+      - node_modules_data:/home/nonroot/app/node_modules
   chrome:
     image: selenium/standalone-chrome
     ports:
@@ -75,4 +78,5 @@ services:
 volumes:
   postgres_data:
   bundle_data:
+  node_modules_data:
 
