@@ -40,11 +40,6 @@ RSpec.configure do |config|
     metadata[:type] = :view_component
   end
 
-  # capybara chrome headless
-  config.before(:each, type: :system) do
-    driven_by :remote_chrome
-  end
-
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [Rails.root.join("spec/fixtures")]
 
