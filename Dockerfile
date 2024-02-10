@@ -1,3 +1,4 @@
+# Install node modules stage
 FROM node:20.11.0-slim as node-builder
 
 WORKDIR /app
@@ -7,6 +8,7 @@ COPY package-lock.json package-lock.json
 
 RUN npm install
 
+# Install gems stage
 FROM ruby:3.2.3-slim as ruby-builder
 
 COPY Gemfile Gemfile
@@ -20,11 +22,12 @@ RUN apt-get update && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
+# Final stage
 FROM ruby:3.2.3-slim
 ARG UID
 ARG GID
 
-
+## set environment variables and working directory
 ENV ROOT=/home/nonroot
 ENV LANG=C.UTF-8
 ENV TZ=Asia/Tokyo
@@ -32,13 +35,7 @@ ENV APP_PATH=${ROOT}/app
 ENV BUNDLE_PATH=${ROOT}/.bundle
 WORKDIR ${APP_PATH}
 
-# install nodejs from node:20.11.0-slim
-COPY --from=node-builder /usr/local/bin/node /usr/local/bin/
-COPY --from=node-builder /usr/local/lib/node_modules /usr/local/lib/node_modules
-RUN ln -fs /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm && \
-  ln -fs /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
-
-# install packages and create nonroot user
+# Install system dependencies
 RUN apt-get update && \
   apt-get install -y sudo libpq-dev && \
   addgroup --gid $GID nonroot && \
@@ -46,6 +43,12 @@ RUN apt-get update && \
   echo 'nonroot ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
+
+## Install nodejs from node:20.11.0-slim
+COPY --from=node-builder /usr/local/bin/node /usr/local/bin/
+COPY --from=node-builder /usr/local/lib/node_modules /usr/local/lib/node_modules
+RUN ln -fs /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm && \
+  ln -fs /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 
 USER nonroot
 
