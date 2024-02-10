@@ -11,16 +11,17 @@ RUN npm install
 # Install gems stage
 FROM ruby:3.2.3-slim as ruby-builder
 
+RUN apt-get update && \
+  apt-get install -y build-essential libpq-dev && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 
-RUN apt-get update && \
-  apt-get install -y build-essential libpq-dev && \
-  gem install bundler && \
+RUN gem install bundler && \
   bundle config set path /usr/local/bundle && \
-  bundle install -j4 && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/*
+  bundle install -j4
 
 # Final stage
 FROM ruby:3.2.3-slim
@@ -37,7 +38,7 @@ WORKDIR ${APP_PATH}
 
 # Install system dependencies
 RUN apt-get update && \
-  apt-get install -y sudo libpq-dev && \
+  apt-get install -y sudo libpq-dev curl && \
   addgroup --gid $GID nonroot && \
   adduser --uid $UID --gid $GID --disabled-password --gecos "" nonroot && \
   echo 'nonroot ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
@@ -71,7 +72,9 @@ RUN npm install
 COPY --chown=nonroot:nonroot . ${ROOT}
 
 COPY --chown=nonroot:nonroot ./docker/entrypoint.sh /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
 
+EXPOSE 3000
+ENTRYPOINT ["entrypoint.sh"]
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
+
 
