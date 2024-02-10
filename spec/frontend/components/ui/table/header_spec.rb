@@ -11,6 +11,6 @@ describe Ui::Table::Header::Component do
   it "renders" do
     render_inline(component)
 
-    is_expected.to have_css "div"
+    is_expected.to have_css "thead"
   end
 end

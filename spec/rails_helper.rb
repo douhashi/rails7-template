@@ -42,7 +42,7 @@ RSpec.configure do |config|
 
   # capybara chrome headless
   config.before(:each, type: :system) do
-    driven_by :selenium_chrome_headless
+    driven_by :remote_chrome
   end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
