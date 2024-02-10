@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   end
 
   root 'sample#index'
+
+  # okcomputer
+  mount OkComputer::Engine, at: '/okcomputer'
 end

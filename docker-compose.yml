@@ -9,6 +9,12 @@ services:
       - POSTGRES_PASSWORD
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
   app:
     image: ${APP_IMAGE_NAME}
     build:
@@ -33,6 +39,7 @@ services:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
+    restart: always
   vite:
     image: ${APP_IMAGE_NAME}
     command: bin/vite dev
@@ -45,6 +52,7 @@ services:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
+    restart: always
   guard:
     image: ${APP_IMAGE_NAME}
     tty: true
@@ -59,10 +67,12 @@ services:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
+    restart: always
   chrome:
     image: selenium/standalone-chrome
     ports:
       - '4444:4444'
+    restart: always
         
 
 #  mailcatcher:
