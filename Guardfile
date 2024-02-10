@@ -26,7 +26,7 @@
 #
 
 rspec_opts = {
-  all_after_pass: true,
+  all_after_pass: false,
   all_on_start: false,
   notification: false,
   failed_mode: :focus,
