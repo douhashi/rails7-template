@@ -11,7 +11,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
     restart: always
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
       timeout: 3s
       retries: 5
@@ -40,11 +40,6 @@ services:
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
     restart: always
-    healthcheck:
-      test: "curl -f http://localhost:3000/okcomputer/all.json || exit 1"
-      interval: 5s
-      timeout: 3s
-      retries: 5
   vite:
     image: ${APP_IMAGE_NAME}
     depends_on:
@@ -52,6 +47,9 @@ services:
         condition: service_healthy
     command: bin/vite dev
     environment:
+      - POSTGRES_HOST
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
       - DEBUG='*vite*'
       - VITE_RUBY_HOST=0.0.0.0
     ports:
