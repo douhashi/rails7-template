@@ -3,7 +3,9 @@
 require "rails_helper"
 
 describe Ui::IconLabel::Component do
-  let(:options) { {} }
+  let(:icon) { "fa-home" }
+  let(:label) { "Home" }
+  let(:options) { { icon: icon, label: label } }
   let(:component) { Ui::IconLabel::Component.new(**options) }
 
   subject { rendered_content }
@@ -11,6 +13,7 @@ describe Ui::IconLabel::Component do
   it "renders" do
     render_inline(component)
 
-    is_expected.to have_css "div"
+    is_expected.to have_css "i", class: icon
+    is_expected.to have_css "span", text: label
   end
 end
