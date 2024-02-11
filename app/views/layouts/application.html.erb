@@ -23,14 +23,10 @@
     <main class="relative h-screen overflow-hidden bg-gray-100 dark:bg-gray-800">
       <div class="flex items-start justify-between">
         <%= component 'ui/sidebar' do |component| %>
-          <% component.with_brand do %>
-            <%= component 'ui/sidebar/brand', name: Settings.application.common.name %>
-          <% end %>
+          <% component.with_brand(name: Settings.application.common.name) %>
 
           <% navigation_menus.each do |menu| %>
-            <% component.with_nav_item do %>
-              <%= component 'ui/sidebar/nav_item', **menu %>
-            <% end %>
+            <%= component.with_nav_item **menu %>
           <% end %>
         <% end %>
 

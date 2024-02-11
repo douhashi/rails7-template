@@ -22,6 +22,12 @@
         Utility-first CSS framework for rapid UI development.
       <% end %>
     <% end %>
+    <%= component 'ui/card' do %>
+      <%= component 'ui/card/header', title: 'Stimulus' %>
+      <%= component 'ui/paragraph' do %>
+        Stimulus framework is included for adding interactivity to your application.
+      <% end %>
+    <% end %>
   </div>
 
   <%= component 'ui/section_heading', title: 'view_component' %>
