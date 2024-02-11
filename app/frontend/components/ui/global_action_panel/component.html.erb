@@ -1,13 +1,3 @@
-<header class="flex items-center justify-between w-full h-16">
-  <div class="relative flex flex-col justify-end h-full px-3 md:w-full">
-    <div class="relative flex items-center justify-end w-full p-1 space-x-4">
-      <%= component '.icon_button', icon: 'fa-plus', url: '#' %>
-      <%= component '.icon_button', icon: 'fa-home', url: '#' %>
-      <%= component '.icon_button', icon: 'fa-lightbulb', url: '#' %>
-
-      <span class="w-1 h-8 bg-gray-200 rounded-lg"></span>
-
-      <%= component '.profile_dropdown' %>
-    </div>
-  </div>
+<header class="z-10 flex items-center justify-end w-full h-16 space-x-4">
+  <%= content %>
 </header>
