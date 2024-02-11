@@ -1,43 +1,81 @@
-<%= component 'ui/heading_with_description', title: 'Sample Page', description: 'Description text blah blah blah...' %>
+<%= component 'ui/heading_with_description', title: 'Template for rapid development with Rails', description: 'This is a template project for Rails application with view_component and Tailwind CSS.' %>
 
 <div class="my-4">
-  <%= component 'ui/section_heading', title: 'One Column Grid' %>
+  <%= component 'ui/section_heading', title: 'Overview' %>
+  <%= component 'ui/paragraph' do %>
+    This template includes the following features:
+  <% end %>
 
+  <div class="grid grid-cols-3 gap-4 my-4">
+    <%= component 'ui/card' do %>
+      <%= component 'ui/card/header', title: 'view_component' %>
+      <%= component 'ui/paragraph' do %>
+        Component based UI development with view_component gem.
+      <% end %>
+      <%= component 'ui/paragraph' do %>
+        Already included some basic components.
+      <% end %>
+    <% end %>
+    <%= component 'ui/card' do %>
+      <%= component 'ui/card/header', title: 'Tailwind CSS' %>
+      <%= component 'ui/paragraph' do %>
+        Utility-first CSS framework for rapid UI development.
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= component 'ui/section_heading', title: 'view_component' %>
   <div class="grid grid-cols-1 gap-4 my-4">
     <%= component 'ui/card' do %>
-      <%= component 'ui/card/header', title: 'Card Header' %>
+      <%= component 'ui/card/header', title: 'view_component' %>
       <%= component 'ui/paragraph' do %>
-        This is card content.<br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        This template project is using view_component gem to create reusable components.
+      <% end %>
+      <%= component 'ui/paragraph' do %>
+        You can use the components in your application by including the component in your view file.
+        The components are designed to be used with Tailwind CSS.
+      <% end %>
 
-        <%= component 'ui/table' do %>
-          <%= component 'ui/table/thead' do %>
-            <%= component 'ui/table/row' do %>
-              <%= component('ui/table/th'){ '#' } %>
-              <%= component('ui/table/th'){ 'First Name' } %>
-              <%= component('ui/table/th'){ 'Last Name' } %>
-              <%= component('ui/table/th'){ 'Username' } %>
-            <% end %>
-          <% end %>
+      <%= component 'ui/divider' %>
 
-          <%= component 'ui/table/tbody' do %>
-            <%= component 'ui/table/row' do %>
-              <%= component('ui/table/td'){ '#' } %>
-              <%= component('ui/table/td'){ 'First Name' } %>
-              <%= component('ui/table/td'){ 'Last Name' } %>
-              <%= component('ui/table/td'){ 'Username' } %>
-            <% end %>
+      <%= component 'ui/card/header', title: 'Lookbook' %>
+      <%= component 'ui/paragraph' do %>
+        This project has component preview feature using lookbook gem.
+      <% end %>
+      <%= component 'ui/paragraph' do %>
+        /dev/lookbook will show you the list of components and their previews.
+
+        <div class="my-2">
+          <%= link_to '/dev/lookbook', target: :blank do %>
+            <%= component 'ui/button', label: 'Explore Components' %>
           <% end %>
-          <%= component 'ui/table/tbody' do %>
-            <%= component 'ui/table/row' do %>
-              <%= component('ui/table/td'){ '#' } %>
-              <%= component('ui/table/td'){ 'First Name' } %>
-              <%= component('ui/table/td'){ 'Last Name' } %>
-              <%= component('ui/table/td'){ 'Username' } %>
-            <% end %>
+        </div>
+      <% end %>
+
+      <%= component 'ui/table' do %>
+        <%= component 'ui/table/caption', label: 'Directory structure' %>
+        <%= component 'ui/table/thead' do %>
+          <%= component 'ui/table/row' do %>
+            <%= component('ui/table/th'){ 'Directory' } %>
+            <%= component('ui/table/th'){ 'Description' } %>
+          <% end %>
+        <% end %>
+        <%= component 'ui/table/tbody' do %>
+          <%= component 'ui/table/row' do %>
+            <%= component('ui/table/td'){ 'app/frontend/components' } %>
+            <%= component('ui/table/td'){ 'Component implementation and preview logic' } %>
+          <% end %>
+          <%= component 'ui/table/row' do %>
+            <%= component('ui/table/td'){ 'spec/frontend/components' } %>
+            <%= component('ui/table/td'){ 'Components view specs' } %>
+          <% end %>
+          <%= component 'ui/table/row' do %>
+            <%= component('ui/table/td'){ 'spec/system/frontend/components' } %>
+            <%= component('ui/table/td'){ 'Components preview specs' } %>
           <% end %>
         <% end %>
       <% end %>
+
     <% end %>
   </div>
 
@@ -74,9 +112,10 @@
       <%= component 'ui/card' do %>
         <%= component 'ui/card/header', title: 'Card Header' %>
         <%= component 'ui/paragraph' do %>
-          This is card content.<br />
+          This is card content.
+        <% end %>
+        <%= component 'ui/paragraph' do %>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
         <% end %>
       <% end %>
     </div>

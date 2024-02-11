@@ -38,6 +38,7 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - VITE_RUBY_HOST=vite
+      - SELENIUM_DRIVER_URL=http://chrome:4444/
     ports:
       - "3000:3000"
     volumes:
