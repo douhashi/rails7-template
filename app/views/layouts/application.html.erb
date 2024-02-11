@@ -26,7 +26,7 @@
           <% component.with_brand(name: Settings.application.common.name) %>
 
           <% navigation_menus.each do |menu| %>
-            <%= component.with_nav_item **menu %>
+            <%= component.with_nav_item(**menu) %>
           <% end %>
         <% end %>
 
