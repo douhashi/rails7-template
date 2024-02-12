@@ -1,10 +1,13 @@
-<%= component 'ui/heading_with_description', title: 'Template for rapid development with Rails', description: 'This is a template project for Rails application with view_component and Tailwind CSS.' %>
+<div class="grid grid-cols-1 gap-4 my-4">
+  <%= component 'template/login_form' %>
+</div>
+
+<%= component 'ui/headings/h1',
+  title: 'Template for rapid development with Rails',
+  subtitle: 'This is a template project for Rails application with view_component and Tailwind CSS.' %>
 
 <div class="my-4">
-  <%= component 'ui/section_heading', title: 'Overview' %>
-  <%= component 'ui/paragraph' do %>
-    This template includes the following features:
-  <% end %>
+  <%= component 'ui/headings/h2', title: 'Overview', subtitle: 'This template includes the following features.' %>
 
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 my-4">
     <%= component 'ui/card' do %>
@@ -30,7 +33,7 @@
     <% end %>
   </div>
 
-  <%= component 'ui/section_heading', title: 'view_component' %>
+  <%= component 'ui/headings/h2', title: 'view_component' %>
   <div class="grid grid-cols-1 gap-4 my-4">
     <%= component 'ui/card' do %>
       <%= component 'ui/card/header', title: 'view_component' %>
@@ -85,7 +88,7 @@
     <% end %>
   </div>
 
-  <%= component 'ui/section_heading', title: 'Grid Layout' %>
+  <%= component 'ui/headings/h2', title: 'Grid Layout' %>
 
   <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-2 lg:grid-cols-3">
     <%= component 'ui/card' do %>
@@ -111,7 +114,7 @@
     <% end %>
   </div>
 
-  <%= component 'ui/section_heading', title: 'Flexbox Layout' %>
+  <%= component 'ui/headings/h2', title: 'Flexbox Layout' %>
 
   <div class="flex flex-col items-start w-full my-6 space-y-4 md:space-x-4 md:space-y-0 md:flex-row">
     <div class="w-full">
@@ -135,7 +138,7 @@
     </div>
   </div>
 
-  <%= component 'ui/section_heading', title: 'Card with progress' %>
+  <%= component 'ui/headings/h2', title: 'Card with progress' %>
 
   <div class="grid grid-cols-1 gap-4 my-4 md:grid-cols-2 lg:grid-cols-3">
     <%= component 'ui/card_with_progress', color: 'red', percentage: 30 do %>
