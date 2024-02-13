@@ -9,7 +9,7 @@ class Ui::Form::Select::Preview < ApplicationViewComponentPreview
   # @param prompt text "Prompt text"
   # @param required toggle "Required flag"
   # @param disabled toggle "Disabled flag"
-  def default(multiple: false, include_blank: "Blank", prompt: "Prompt", required: false, disabled: false)
+  def default(multiple: false, include_blank: "", prompt: "", required: false, disabled: false)
     options = { multiple: multiple, include_blank: include_blank, prompt: prompt }
     html_options = { required: required, disabled: disabled }
 
