@@ -5,15 +5,16 @@ class Ui::Button::Component < ApplicationViewComponent
   option :style, default: -> { 'primary' }
   option :size,  default: -> { 'base' }
   option :wide,  default: -> { false }
+  option :icon,  default: -> { nil }
 
   def css_classes
-    "#{base_css} #{color_css} #{size_css} #{wide_css}"
+    "#{base_css} #{color_css} #{size_css} #{wide_css} #{padding_css}"
   end
 
   private
 
   def base_css
-    "border-2 transition ease-in duration-200 text-center shadow-md rounded-md"
+    "flex justify-center items-center space-x-2 border-2 transition ease-in duration-200 shadow-md rounded-md"
   end
 
   def color_css
@@ -42,15 +43,26 @@ class Ui::Button::Component < ApplicationViewComponent
   def size_css
     case size
     when 'xs'
-      "py-1 px-1 text-xs font-normal"
+      "text-xs font-normal"
     when 'sm'
-      "py-1 px-2 text-sm font-normal"
+      "text-sm font-normal"
     when 'base'
-      "py-1 px-2 text-base font-normal"
+      "text-base font-normal"
     when 'lg'
-      "py-1 px-2 text-lg font-normal"
+      "text-lg font-normal"
     when 'xl'
-      "py-2 px-4 text-xl font-semibold"
+      "text-xl font-semibold"
+    end
+  end
+
+  def padding_css
+    case size
+    when 'xs'
+      "py-1 px-1"
+    when 'sm', 'base', 'lg'
+      "py-1 px-2"
+    when 'xl'
+      "py-2 px-4"
     end
   end
 

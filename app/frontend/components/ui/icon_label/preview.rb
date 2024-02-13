@@ -6,7 +6,7 @@ class Ui::IconLabel::Preview < ApplicationViewComponentPreview
 
   # @param icon
   # @param label
-  def default(icon: "fa-home", label: "Home")
+  def default(icon: "fas fa-home", label: "Home")
     render_with icon:, label:
   end
 end

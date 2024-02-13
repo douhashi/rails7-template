@@ -1,4 +1,11 @@
 <button type="button" class="<%= css_classes %>">
-  <%= label %>
+  <% if icon %>
+    <div class="<%= size_css %>">
+      <i class="<%= icon %>"></i>
+    </div>
+  <% end %>
+  <% if label %>
+    <span><%= label %></span>
+  <% end %>
 </button>
 
