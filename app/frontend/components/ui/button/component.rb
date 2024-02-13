@@ -4,9 +4,10 @@ class Ui::Button::Component < ApplicationViewComponent
   option :label, default: -> { 'Button' }
   option :style, default: -> { 'primary' }
   option :size,  default: -> { 'base' }
+  option :wide,  default: -> { false }
 
   def css_classes
-    "#{base_css} #{color_css} #{size_css}"
+    "#{base_css} #{color_css} #{size_css} #{wide_css}"
   end
 
   private
@@ -51,5 +52,9 @@ class Ui::Button::Component < ApplicationViewComponent
     when 'xl'
       "py-2 px-4 text-xl font-semibold"
     end
+  end
+
+  def wide_css
+    "w-full" if wide
   end
 end
