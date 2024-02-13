@@ -29,7 +29,7 @@ class Ui::Button::Component < ApplicationViewComponent
       border_color = "border-indigo-600 dark:border-indigo-500"
     when 'teritary'
       text_color   = "text-gray-600 hover:text-white dark:text-gray-500 dark:hover:text-white"
-      bg_color     = "hover:bg-gray-500 dark:hover:bg-gray-500"
+      bg_color     = "hover:bg-gray-600 dark:hover:bg-gray-500"
       border_color = "border-gray-600 dark:border-gray-500"
     when 'destructive'
       text_color   = "text-red-600 hover:text-white dark:text-red-500 dark:hover:text-white"
