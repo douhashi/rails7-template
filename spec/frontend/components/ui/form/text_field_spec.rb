@@ -4,8 +4,8 @@ require "rails_helper"
 
 describe Ui::Form::TextField::Component do
   let(:form) { dummy_form_builder }
-  let(:field) { :field_name }
-  let(:options) { { form: form, field: field, placeholder: "Placeholder text", required: true } }
+  let(:method) { :field_name }
+  let(:options) { { form: form, method: method } }
   let(:component) { Ui::Form::TextField::Component.new(**options) }
 
   subject { rendered_content }

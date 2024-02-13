@@ -4,7 +4,8 @@ require "rails_helper"
 
 describe Ui::Form::Label::Component do
   let(:form) { dummy_form_builder }
-  let(:options) { { form: form, field: :name } }
+  let(:method) { :field_name }
+  let(:options) { { form: form, method: method } }
   let(:component) { Ui::Form::Label::Component.new(**options) }
 
   subject { rendered_content }

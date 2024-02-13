@@ -9,7 +9,6 @@ services:
       - POSTGRES_PASSWORD
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    restart: always
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
@@ -45,7 +44,6 @@ services:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
-    restart: always
     logging:
       driver: json-file
       options:
@@ -69,7 +67,6 @@ services:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
-    restart: always
     logging:
       driver: json-file
       options:
@@ -94,7 +91,6 @@ services:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
-    restart: always
     logging:
       driver: json-file
       options:
@@ -104,7 +100,6 @@ services:
     image: selenium/standalone-chrome
     ports:
       - '4444:4444'
-    restart: always
     healthcheck:
       test: "curl -f http://localhost:4444/status || exit 1"
       interval: 5s

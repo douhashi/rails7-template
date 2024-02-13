@@ -1,0 +1,8 @@
+<div class="flex relative <%= disabled_css if options[:disabled] %>">
+  <span class="rounded-l-md inline-flex items-center px-3 bg-white border-t border-l border-b border-gray-300 text-gray-500 shadow-sm text-sm w-10">
+    <i class="fas <%= icon %>"></i>
+  </span>
+
+  <% options.reverse_merge! class: base_css %>
+  <%= form.__send__("#{field_type}_field", method, **options) %>
+</div>

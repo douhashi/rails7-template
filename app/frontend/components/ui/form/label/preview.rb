@@ -4,6 +4,9 @@ class Ui::Form::Label::Preview < ApplicationViewComponentPreview
   # You can specify the container class for the default template
   # self.container_class = "w-1/2 border border-gray-300"
 
-  def default
+  # @param required toggle "Required flag"
+  def default(required: false)
+    options = { required: required }
+    render_with(options: options)
   end
 end
