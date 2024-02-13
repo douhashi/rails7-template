@@ -5,7 +5,9 @@ class Ui::Paragraph::Preview < ApplicationViewComponentPreview
   # self.container_class = "w-1/2 border border-gray-300"
 
   # @param content text "Content text"
-  def default(content: "This is a paragraph")
-    render_with(content: content)
+  # @param size select { choices: [xs, sm, base, lg, xl] }
+  # @param weight select { choices: [thin, light, normal, semibold, bold] }
+  def default(content: "This is a paragraph", size: 'base', weight: 'normal')
+    render_with(content:, size:, weight:)
   end
 end

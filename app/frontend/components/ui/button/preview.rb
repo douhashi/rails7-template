@@ -9,8 +9,9 @@ class Ui::Button::Preview < ApplicationViewComponentPreview
   # @param size select { choices: [xs, sm, base, lg, xl] }
   # @param wide toggle "Wide flag"
   # @param icon text "Icon class"
-  def default(label: 'This is a button', style: 'primary', size: 'base', wide: false, icon: nil)
-    render_with(style:, label:, size:, wide: wide, icon: icon)
+  # @param button_type select { choices: [button, submit, reset] }
+  def default(label: 'This is a button', style: 'primary', size: 'base', wide: false, icon: nil, button_type: 'button')
+    render_with(style:, label:, size:, wide: wide, icon: icon, button_type: button_type)
   end
 
   # @!group Styles
@@ -18,20 +19,21 @@ class Ui::Button::Preview < ApplicationViewComponentPreview
   # @param size select { choices: [xs, sm, base, lg, xl] }
   # @param wide toggle "Wide flag"
   # @param icon text "Icon class"
-  def primary(label: 'This is a button', size: 'base', wide: false, icon: nil)
-    render_with(style: 'primary', label:, size:, wide:, icon:)
+  # @param button_type select { choices: [button, submit, reset] }
+  def primary(label: 'This is a button', size: 'base', wide: false, icon: nil, button_type: 'button')
+    render_with(style: 'primary', label:, size:, wide:, icon:, button_type:)
   end
 
-  def secondary(label: 'This is a button', size: 'base', wide: false, icon: nil)
-    render_with(style: 'secondary', label:, size:, wide:, icon:)
+  def secondary(label: 'This is a button', size: 'base', wide: false, icon: nil, button_type: 'button')
+    render_with(style: 'secondary', label:, size:, wide:, icon:, button_type:)
   end
 
-  def teritary(label: 'This is a button', size: 'base', wide: false, icon: nil)
-    render_with(style: 'teritary', label:, size:, wide:, icon:)
+  def teritary(label: 'This is a button', size: 'base', wide: false, icon: nil, button_type: 'button')
+    render_with(style: 'teritary', label:, size:, wide:, icon:, button_type:)
   end
 
-  def destructive(label: 'This is a button', size: 'base', wide: false, icon: nil)
-    render_with(style: 'destructive', label:, size:, wide:, icon:)
+  def destructive(label: 'This is a button', size: 'base', wide: false, icon: nil, button_type: 'button')
+    render_with(style: 'destructive', label:, size:, wide:, icon:, button_type:)
   end
   # @!endgroup Styles
 
@@ -40,24 +42,25 @@ class Ui::Button::Preview < ApplicationViewComponentPreview
   # @param style select { choices: [primary, secondary, teritary, destructive] }
   # @param wide toggle "Wide flag"
   # @param icon text "Icon class"
-  def xs(label: 'Button', style: 'primary', wide: false, icon: nil)
-    render_with(label:, style:, size: 'xs', wide:, icon:)
+  # @param button_type select { choices: [button, submit, reset] }
+  def xs(label: 'Button', style: 'primary', wide: false, icon: nil, button_type: 'button')
+    render_with(label:, style:, size: 'xs', wide:, icon:, button_type:)
   end
 
-  def sm(label: 'Button', style: 'primary', wide: false, icon: nil)
-    render_with(label:, style:, size: 'sm', wide:, icon:)
+  def sm(label: 'Button', style: 'primary', wide: false, icon: nil, button_type: 'button')
+    render_with(label:, style:, size: 'sm', wide:, icon:, button_type:)
   end
 
-  def base(label: 'Button', style: 'primary', wide: false, icon: nil)
-    render_with(label:, style:, size: 'base', wide:, icon:)
+  def base(label: 'Button', style: 'primary', wide: false, icon: nil, button_type: 'button')
+    render_with(label:, style:, size: 'base', wide:, icon:, button_type:)
   end
 
-  def lg(label: 'Button', style: 'primary', wide: false, icon: nil)
-    render_with(label:, style:, size: 'lg', wide:, icon:)
+  def lg(label: 'Button', style: 'primary', wide: false, icon: nil, button_type: 'button')
+    render_with(label:, style:, size: 'lg', wide:, icon:, button_type:)
   end
 
-  def xl(label: 'Button', style: 'primary', wide: false, icon: nil)
-    render_with(label:, style:, size: 'xl', wide:, icon:)
+  def xl(label: 'Button', style: 'primary', wide: false, icon: nil, button_type: 'button')
+    render_with(label:, style:, size: 'xl', wide:, icon:, button_type:)
   end
   # @!endgroup Styles
 end

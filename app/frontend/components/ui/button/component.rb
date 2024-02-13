@@ -6,6 +6,7 @@ class Ui::Button::Component < ApplicationViewComponent
   option :size,  default: -> { 'base' }
   option :wide,  default: -> { false }
   option :icon,  default: -> { nil }
+  option :button_type, default: -> { 'button' }
 
   def css_classes
     "#{base_css} #{color_css} #{size_css} #{wide_css} #{padding_css}"
