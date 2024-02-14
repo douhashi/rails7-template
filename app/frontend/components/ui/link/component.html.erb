@@ -1,0 +1,9 @@
+<span class="<%= css_classes %>">
+  <% if text %>
+    <%= link_to text, url, **options %>
+  <% else %>
+    <%= link_to url, **options do %>
+      <%= content %>
+    <% end %>
+  <% end %>
+</span>
