@@ -19,11 +19,9 @@ module.exports = {
       'mono': ["Roboto Mono", "Consolas", "Menlo", "Monaco", "Andale Mono", "Ubuntu Mono", "monospace"]
     },
     extend: {
-
     }
   },
   variants: {
-    outline: ["focus"],
     extend: {
       backgroundColor: ["checked"],
       borderColor: ["checked"],

@@ -1,32 +1,25 @@
-# README
+# Rails7 Template Repository
+
+## This template includes
+
+* [view_component](https://github.com/ViewComponent/view_component) and [view_component-contrib](https://github.com/palkan/view_component-contrib)
+    * and Common UI component implements
+* Dockerfile and docker-compose.yml for development
+* Rspec
+* and some useful gems.
 
 ## requirements
 
-* asdf-vm
-* ruby
-* nodejs
-* yarn
 * direnv
 * docker and docker-compose
 
-## setup
+## Getting started
 
 ```
 cp .envrc.sample .envrc
 direnv allow
 
-bundle install -j4
-yarn install
-
-docker-compose up -d
-
-bin/rails db:migrate:reset
-
-bin/server
+docker compose run app bin/rails db:migrate:reset
+docker compose up -d
 ```
 
-## guard
-
-```
-bin/guard
-```
