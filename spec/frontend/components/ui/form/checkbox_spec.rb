@@ -2,11 +2,11 @@
 
 require "rails_helper"
 
-describe Ui::Form::Field::Component do
+describe Ui::Form::Checkbox::Component do
   let(:form) { dummy_form_builder }
-  let(:method) { :field_name }
+  let(:method) { :checkbox_field }
   let(:options) { { form: form, method: method } }
-  let(:component) { Ui::Form::Field::Component.new(**options) }
+  let(:component) { Ui::Form::Checkbox::Component.new(**options) }
 
   subject { rendered_content }
 

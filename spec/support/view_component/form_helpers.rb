@@ -4,6 +4,6 @@ module ViewComponent::FormHelpers
   end
 
   def test_model
-    Struct.new("TestModel", :field_name).new(:test_field)
+    Struct.new("TestModel", :field_name, :checkbox_field).new(:test_field, "1")
   end
 end

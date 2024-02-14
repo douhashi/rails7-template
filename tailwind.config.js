@@ -19,42 +19,18 @@ module.exports = {
       'mono': ["Roboto Mono", "Consolas", "Menlo", "Monaco", "Andale Mono", "Ubuntu Mono", "monospace"]
     },
     extend: {
-      colors: {
-        "primary": {
-          "50": "#efe5fd",
-          "100": "#d4bff9",
-          "200": "#b794f6",
-          "300": "#9965f4",
-          "400": "#7e3ff2",
-          "500": "#6002ee",
-          "600": "#5300e8",
-          "700": "#3d00e0",
-          "800": "#1d00db",
-          "900": "#0000d6"
-        },
-        "secondary": {
-          "50": "#fcfcfc",
-          "100": "#f7f7f7",
-          "200": "#f2f2f2",
-          "300": "#eaeaea",
-          "400": "#c8c8c8",
-          "500": "#aaaaaa",
-          "600": "#808080",
-          "700": "#6c6c6c",
-          "800": "#4c4c4c",
-          "900": "#2a2a2a"
-        },
-        "on": {
-          "primary": '#ffffff',
-          "secondary": '#ffffff',
-          "surface": '#000000'
-        },
-        "surface": '#efe5fd',
-      }
-    },
 
+    }
   },
-
+  variants: {
+    outline: ["focus"],
+    extend: {
+      backgroundColor: ["checked"],
+      borderColor: ["checked"],
+      inset: ["checked"],
+      zIndex: ["hover", "active"],
+    }
+  },
   corePlugins: {
     aspectRatio: false,
   },
