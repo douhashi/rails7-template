@@ -1,6 +1,10 @@
 export COMPOSE_FILE=docker-compose.yml
+export APP_IMAGE_NAME=`basename $PWD`
 
-export POSTGRES_HOST=localhost
+export HOST_UID=$(id -u)
+export HOST_GID=$(id -g)
+
+export POSTGRES_HOST=db
 export POSTGRES_USER=postgres
 export POSTGRES_PASSWORD=password
 
