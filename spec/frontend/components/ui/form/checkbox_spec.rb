@@ -13,6 +13,6 @@ describe Ui::Form::Checkbox::Component do
   it "renders" do
     render_inline(component)
 
-    is_expected.to have_css "div"
+    is_expected.to have_css "input[type='checkbox']"
   end
 end

@@ -1,0 +1,11 @@
+<% html_options.reverse_merge!(class: css_classes) %>
+
+<div class="flex relative <%= disabled_css if html_options[:disabled] %>">
+  <div class="flex items-center">
+    <%= form.radio_button method, value, **html_options %>
+
+    <span class="ml-2 text-gray-700 dark:text-white">
+      <%= form.label method, value, value: value %>
+    </span>
+  </div>
+</div>

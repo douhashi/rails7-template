@@ -5,7 +5,8 @@ require "rails_helper"
 describe Ui::Form::Field::Component do
   let(:form) { dummy_form_builder }
   let(:method) { :field_name }
-  let(:options) { { form: form, method: method } }
+  let(:field_type) { :text }
+  let(:options) { { form: form, method: method, field_type: field_type } }
   let(:component) { Ui::Form::Field::Component.new(**options) }
 
   subject { rendered_content }
@@ -13,6 +14,6 @@ describe Ui::Form::Field::Component do
   it "renders" do
     render_inline(component)
 
-    is_expected.to have_css "div"
+    is_expected.to have_css "input[type='#{field_type}']"
   end
 end
