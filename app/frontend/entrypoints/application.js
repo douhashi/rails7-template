@@ -16,6 +16,7 @@ console.log('Visit the guide for more information: ', 'https://vite-ruby.netlify
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 
 // Stimulus
 import { Application } from '@hotwired/stimulus'

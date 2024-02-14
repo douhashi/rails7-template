@@ -1,0 +1,5 @@
+<% html_options.reverse_merge! class: base_css %>
+
+<div class="relative <%= disabled_css if options[:disabled] %>">
+  <%= form.select method, selections, options, html_options %>
+</div>

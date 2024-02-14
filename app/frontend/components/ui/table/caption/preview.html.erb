@@ -1,0 +1,18 @@
+<div class="bg-white dark:bg-gray-700 p-4">
+  <%= component 'ui/table' do %>
+    <%= component 'ui/table/caption', label: 'Table caption' %>
+    <%= component 'ui/table/thead' do %>
+      <%= component 'ui/table/row' do %>
+        <%= component('ui/table/th'){ 'Header 1' } %>
+        <%= component('ui/table/th'){ 'Header 2' } %>
+      <% end %>
+    <% end %>
+    <%= component 'ui/table/tbody' do %>
+      <%= component 'ui/table/row' do %>
+        <%= component('ui/table/td'){ 'Table Content 1' } %>
+        <%= component('ui/table/td'){ 'Table Content 2' } %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+

@@ -70,6 +70,8 @@ guard :rspec, rspec_opts do
 
   watch(%r{^app/controllers/(.+)/}) { |m| ["spec/lib/#{m[1]}_spec.rb", "spec/requests/#{m[1]}_spec.rb"] }
   watch(%r{^app/frontend/components/(.+)/}) { |m| ["spec/frontend/components/#{m[1]}_spec.rb"] }
+  watch(%r{^app/frontend/components/(.+)/}) { |m| ["spec/system/frontend/components/#{m[1]}_spec.rb"] }
+  watch(%r{^spec/frontend/components/(.+)/}) { |m| ["spec/system/frontend/components/#{m[1]}_spec.rb"] }
 
   # Capybara features specs
   watch(rails.view_dirs)     { |m| rspec.spec.call("features/#{m[1]}") }

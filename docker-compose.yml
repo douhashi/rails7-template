@@ -9,12 +9,16 @@ services:
       - POSTGRES_PASSWORD
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    restart: always
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
       timeout: 3s
       retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+        max-file: 1
   app:
     image: ${APP_IMAGE_NAME}
     build:
@@ -33,13 +37,18 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - VITE_RUBY_HOST=vite
+      - SELENIUM_DRIVER_URL=http://chrome:4444/
     ports:
       - "3000:3000"
     volumes:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
-    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: 3m
+        max-file: 1
   vite:
     image: ${APP_IMAGE_NAME}
     depends_on:
@@ -58,7 +67,11 @@ services:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
-    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+        max-file: 1
   guard:
     image: ${APP_IMAGE_NAME}
     depends_on:
@@ -78,17 +91,22 @@ services:
       - .:/home/nonroot/app
       - bundle_data:/usr/local/bundle
       - node_modules_data:/home/nonroot/app/node_modules
-    restart: always
+    logging:
+      driver: json-file
+      options:
+        max-size: 1m
+        max-file: 1
   chrome:
     image: selenium/standalone-chrome
     ports:
       - '4444:4444'
-    restart: always
     healthcheck:
       test: "curl -f http://localhost:4444/status || exit 1"
       interval: 5s
       timeout: 3s
       retries: 5
+    logging:
+      driver: none
 
 #  mailcatcher:
 #    image: 'schickling/mailcatcher'

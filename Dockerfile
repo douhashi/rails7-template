@@ -58,16 +58,16 @@ RUN sudo mkdir -p ${BUNDLE_PATH} && \
   bundle config set path ${BUNDLE_PATH} && \
   bundle config set bin ${BUNDLE_PATH}/bin
 
+COPY --chown=nonroot:nonroot package.json ${APP_PATH}/package.json
+COPY --chown=nonroot:nonroot package-lock.json ${APP_PATH}/package-lock.json
+RUN npm install
+
 COPY --chown=nonroot:nonroot Gemfile ${APP_PATH}/Gemfile
 COPY --chown=nonroot:nonroot Gemfile.lock ${APP_PATH}/Gemfile.lock
 
 # copy gems from previous stage
 COPY --from=ruby-builder --chown=nonroot:nonroot /usr/local/bundle ${BUNDLE_PATH}
 RUN bundle install -j4
-
-COPY --chown=nonroot:nonroot package.json ${APP_PATH}/package.json
-COPY --chown=nonroot:nonroot package-lock.json ${APP_PATH}/package-lock.json
-RUN npm install
 
 COPY --chown=nonroot:nonroot . ${ROOT}
 
