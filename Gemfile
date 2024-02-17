@@ -58,6 +58,9 @@ group :development do
   gem 'brakeman'
   gem 'bundler-audit'
 
+  # N+1 problem
+  gem 'bullet'
+
   gem 'actioncable'
 end
 
@@ -66,6 +69,8 @@ gem 'config'
 
 # Test data
 gem 'factory_bot_rails'
+gem 'faker'
+gem 'gimei'
 
 # Proccess management
 gem 'foreman'
@@ -74,6 +79,8 @@ gem 'foreman'
 gem 'vite_rails'
 
 # ViewComponent
+gem 'dry-effects', '~> 0.4'
+gem 'dry-initializer', '~> 3.1'
 gem 'lookbook', require: false
 gem 'view_component'
 gem 'view_component-contrib'
@@ -111,4 +118,3 @@ gem 'rollbar'
 # Stimulus
 gem 'stimulus-rails'
 
-gem "dry-initializer", "~> 3.1"
