@@ -6,4 +6,6 @@ bundle install -j4
 
 npm install
 
+rm -f tmp/pids/server.pid
+
 exec "$@"
