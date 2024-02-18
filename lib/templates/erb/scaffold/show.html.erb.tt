@@ -14,17 +14,17 @@
 
       <div class="flex justify-between space-x-2">
         <%%= link_to <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, data: { confirm: t('.confirm.destroy') } do %>
-          <%%= component 'ui/button', label: t('.destroy'), style: 'destructive' %>
+          <%%= component 'ui/button', label: t('button.destroy'), style: 'destructive' %>
         <%% end %>
         <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) do %>
-          <%%= component 'ui/button', label: t('.edit') %>
+          <%%= component 'ui/button', label: t('button.edit') %>
         <%% end %>
       </div>
     <%% end %>
 
     <div class="flex justify-end">
       <%%= link_to <%= plural_table_name %>_path do %>
-        <%%= component 'ui/button', label: t('.back'), style: 'teritary' %>
+        <%%= component 'ui/button', label: t('button.back'), style: 'teritary' %>
       <%% end %>
     </div>
 

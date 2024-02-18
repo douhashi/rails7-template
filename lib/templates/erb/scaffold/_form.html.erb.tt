@@ -11,8 +11,8 @@
 <% end -%>
 
   <div class="flex justify-between p-2 space-x-4">
-    <%%= component 'ui/button', button_type: :reset, style: 'teritary', label: t('.reset') %>
-    <%%= component 'ui/button', button_type: :submit, label: t('.submit') %>
+    <%%= component 'ui/button', button_type: :reset, style: 'teritary', label: t('button.reset') %>
+    <%%= component 'ui/button', button_type: :submit, label: t('button.submit') %>
   </div>
 <%% end %>
 

@@ -23,7 +23,7 @@
 <% end -%>
               <%%= component('ui/table/td') do %>
                 <%%= link_to <%= singular_table_name %> do %>
-                  <%%= component 'ui/button', label: t('.show'), size: 'xs', style: 'secondary' %>
+                  <%%= component 'ui/button', label: t('button.show'), size: 'xs', style: 'secondary' %>
                 <%% end %>
               <%% end %>
             <%% end %>
@@ -33,7 +33,7 @@
 
       <div class="flex justify-end">
         <%%= link_to new_<%= singular_table_name %>_path do %>
-          <%%= component 'ui/button', label: t('.new') %>
+          <%%= component 'ui/button', label: t('button.new') %>
         <%% end %>
       </div>
 
