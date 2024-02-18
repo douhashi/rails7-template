@@ -38,3 +38,5 @@ en:
     back: "Back"
     submit: "Save"
     reset: "Reset"
+  confirm:
+    destroy: "Are you sure?"

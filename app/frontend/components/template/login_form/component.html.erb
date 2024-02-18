@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex gap-4 item-center">
-      <%= component 'ui/button', label: 'Sign in with Google', icon: 'fab fa-google', wide: true %>
+      <%= component 'ui/link_button', label: 'Sign in with Google', url: '#', icon: 'fab fa-google', wide: true %>
     </div>
 
     <div class="mt-8">
@@ -30,27 +30,19 @@
 
         <div class="flex items-center mb-6 -mt-4">
           <div class="flex ml-auto">
-            <%= link_to '#' do %>
-              <%= component 'ui/paragraph', size: 'xs', weight: 'light' do %>
-                Forgot Your Password?
-              <% end %>
-            <% end %>
+            <%= component 'ui/link', text: 'Forgot Your Password?', url: '#', size: 'xs', weight: 'light' %>
           </div>
         </div>
 
         <div class="flex w-full">
-          <%= component 'ui/button', label: 'Login', wide: true, button_type: :submit %>
+          <%= component 'ui/form/button', label: 'Login', wide: true %>
         </div>
 
       <% end %>
     </div>
 
     <div class="flex items-center justify-center mt-6">
-      <%= link_to '#' do %>
-        <%= component 'ui/paragraph', size: 'xs', weight: 'light' do %>
-          You don&#x27;t have an account?
-        <% end %>
-      <% end %>
+      <%= component 'ui/link', text: "Don't have an account?", url: '#', size: 'xs', weight: 'light' %>
     </div>
   </div>
 

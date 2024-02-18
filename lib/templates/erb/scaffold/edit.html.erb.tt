@@ -7,9 +7,7 @@
     <%% end %>
 
     <div class="flex justify-end">
-      <%%= link_to <%= singular_table_name %>_path(@<%= singular_table_name %>) do %>
-        <%%= component 'ui/button', label: t('button.back'), style: 'teritary' %>
-      <%% end %>
+      <%%= component 'ui/link_button', label: t('button.back'), url: @<%= singular_table_name %>, style: 'teritary' %>
     </div>
 
   </div>

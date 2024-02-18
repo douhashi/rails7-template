@@ -6,7 +6,7 @@ describe "button component" do
   subject { page }
 
   it "default preview" do
-    visit("/dev/lookbook/preview/ui/button/default")
+    visit("/dev/lookbook/preview/ui/form/button/default")
 
     is_expected.to_not have_text "Failed"
   end

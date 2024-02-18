@@ -13,19 +13,13 @@
       <%% end %>
 
       <div class="flex justify-between space-x-2">
-        <%%= link_to <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, data: { confirm: t('.confirm.destroy') } do %>
-          <%%= component 'ui/button', label: t('button.destroy'), style: 'destructive' %>
-        <%% end %>
-        <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) do %>
-          <%%= component 'ui/button', label: t('button.edit') %>
-        <%% end %>
+        <%%= component 'ui/link_button', label: t('button.destroy'), url: @<%= singular_table_name %>, options: { method: :delete, data: { confirm: t('confirm.destroy') } }, style: 'destructive' %>
+        <%%= component 'ui/link_button', label: t('button.edit'), url: edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %>
       </div>
     <%% end %>
 
     <div class="flex justify-end">
-      <%%= link_to <%= plural_table_name %>_path do %>
-        <%%= component 'ui/button', label: t('button.back'), style: 'teritary' %>
-      <%% end %>
+      <%%= component 'ui/link_button', label: t('button.back'), url: <%= plural_table_name %>_path, style: 'teritary' %>
     </div>
 
   </div>

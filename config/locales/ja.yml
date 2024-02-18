@@ -7,3 +7,5 @@ ja:
     back: "戻る"
     submit: "保存"
     reset: "リセット"
+  confirm:
+    destroy: "削除しますか？"
