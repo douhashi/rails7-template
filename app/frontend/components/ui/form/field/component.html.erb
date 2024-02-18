@@ -1,6 +1,6 @@
 <% html_options.reverse_merge! class: base_css %>
 
 <div class="relative <%= disabled_css if html_options[:disabled] %>">
-  <%= form.__send__("#{field_type}_field", method, **html_options) %>
+  <%= form.__send__(field_type, method, **html_options) %>
 </div>
 

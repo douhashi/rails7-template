@@ -51,9 +51,7 @@
         /dev/lookbook will show you the list of components and their previews.
 
         <div class="my-2">
-          <%= link_to '/dev/lookbook', target: :blank do %>
-            <%= component 'ui/button', label: 'Explore Components' %>
-          <% end %>
+          <%= component 'ui/link_button', label: 'Explore Components', url: '/dev/lookbook', options: { target: '_blank' } %>
         </div>
       <% end %>
 

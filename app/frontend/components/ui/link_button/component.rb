@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
-class Ui::Button::Component < ApplicationViewComponent
-  option :label, default: -> { 'Button' }
-  option :style, default: -> { 'primary' }
-  option :size,  default: -> { 'base' }
-  option :wide,  default: -> { false }
-  option :icon,  default: -> { nil }
-  option :button_type, default: -> { 'button' }
+class Ui::LinkButton::Component < ApplicationViewComponent
+  option :url
+  option :label,   optional: true
+  option :icon,    optional: true
+  option :style,   default: -> { 'primary' }
+  option :size,    default: -> { 'base' }
+  option :wide,    default: -> { false }
+  option :options, default: -> { {} }
 
   def css_classes
     "#{base_css} #{color_css} #{size_css} #{wide_css} #{padding_css}"
@@ -15,7 +16,7 @@ class Ui::Button::Component < ApplicationViewComponent
   private
 
   def base_css
-    "flex justify-center items-center space-x-2 border-2 transition ease-in duration-200 shadow-md rounded-md"
+    "inline-flex justify-center items-center space-x-2 border-2 transition ease-in duration-200 shadow-md rounded-md"
   end
 
   def color_css

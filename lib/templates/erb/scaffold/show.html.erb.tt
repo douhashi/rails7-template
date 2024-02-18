@@ -1,0 +1,27 @@
+<%%= component 'ui/headings/h1', title: t('.title') %>
+
+<div class="my-4">
+  <div class="grid grid-cols-1 gap-4 my-4">
+    <%%= component 'ui/card' do %>
+      <%%= component 'ui/table' do %>
+<% attributes.each do |attribute| -%>
+        <%%= component 'ui/table/row' do %>
+          <%%= component('ui/table/td'){ <%= class_name %>.human_attribute_name(:<%= attribute.column_name %>) } %>
+          <%%= component('ui/table/td'){ @<%= singular_table_name %>.<%= attribute.column_name %> } %>
+        <%% end %>
+<% end -%>
+      <%% end %>
+
+      <div class="flex justify-between space-x-2">
+        <%%= component 'ui/link_button', label: t('button.destroy'), url: @<%= singular_table_name %>, options: { method: :delete, data: { confirm: t('confirm.destroy') } }, style: 'destructive' %>
+        <%%= component 'ui/link_button', label: t('button.edit'), url: edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %>
+      </div>
+    <%% end %>
+
+    <div class="flex justify-end">
+      <%%= component 'ui/link_button', label: t('button.back'), url: <%= plural_table_name %>_path, style: 'teritary' %>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+<%%= component 'ui/headings/h1', title: t('.title') %>
+
+<div class="my-4">
+  <div class="grid grid-cols-1 gap-4 my-4">
+    <%%= component 'ui/card' do %>
+      <%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
+    <%% end %>
+
+    <div class="flex justify-end">
+      <%%= component 'ui/link_button', label: t('button.back'), url: @<%= singular_table_name %>, style: 'teritary' %>
+    </div>
+
+  </div>
+</div>
+

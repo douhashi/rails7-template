@@ -30,4 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  button:
+    show: "Show"
+    new: "New"
+    edit: "Edit"
+    destroy: "Destroy"
+    back: "Back"
+    submit: "Save"
+    reset: "Reset"
+  confirm:
+    destroy: "Are you sure?"
