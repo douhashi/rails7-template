@@ -43,6 +43,8 @@ application.register('tabs', Tabs)
 application.register('toggle', Toggle)
 
 // Example: Load Rails libraries in Vite.
+import Rails from '@rails/ujs'
+Rails.start()
 //
 // import * as Turbo from '@hotwired/turbo'
 // Turbo.start()

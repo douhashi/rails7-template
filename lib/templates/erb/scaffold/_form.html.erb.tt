@@ -1,37 +1,18 @@
-<%%= form_with(model: <%= model_resource_name %>) do |form| %>
-  <%% if <%= singular_table_name %>.errors.any? %>
-    <div style="color: red">
-      <h2><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
-
-      <ul>
-        <%% <%= singular_table_name %>.errors.each do |error| %>
-          <li><%%= error.full_message %></li>
-        <%% end %>
-      </ul>
-    </div>
-  <%% end %>
-
+<%%= form_with model: <%= singular_table_name %> do |f| %>
 <% attributes.each do |attribute| -%>
-  <div>
-<% if attribute.password_digest? -%>
-    <%%= form.label :password, style: "display: block" %>
-    <%%= form.password_field :password %>
+  <div class="flex items-center p-2">
+    <div class="w-1/3">
+      <%%= component 'ui/form/label', form: f, method: :<%= attribute.column_name %> %>
+    </div>
+    <div class="w-2/3">
+      <%%= component 'ui/form/field', form: f, method: :<%= attribute.column_name %>, field_type: :<%= attribute.field_type %> %>
+    </div>
   </div>
-
-  <div>
-    <%%= form.label :password_confirmation, style: "display: block" %>
-    <%%= form.password_field :password_confirmation %>
-<% elsif attribute.attachments? -%>
-    <%%= form.label :<%= attribute.column_name %>, style: "display: block" %>
-    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true %>
-<% else -%>
-    <%%= form.label :<%= attribute.column_name %>, style: "display: block" %>
-    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %> %>
 <% end -%>
-  </div>
 
-<% end -%>
-  <div>
-    <%%= form.submit %>
+  <div class="flex justify-between p-2 space-x-4">
+    <%%= component 'ui/button', button_type: :reset, style: 'teritary', label: t('.reset') %>
+    <%%= component 'ui/button', button_type: :submit, label: t('.submit') %>
   </div>
 <%% end %>
+

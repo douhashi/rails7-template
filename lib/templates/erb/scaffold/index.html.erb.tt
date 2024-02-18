@@ -32,7 +32,7 @@
       <%% end %>
 
       <div class="flex justify-end">
-        <%%= link_to new_<%= plural_table_name %>_path do %>
+        <%%= link_to new_<%= singular_table_name %>_path do %>
           <%%= component 'ui/button', label: t('.new') %>
         <%% end %>
       </div>

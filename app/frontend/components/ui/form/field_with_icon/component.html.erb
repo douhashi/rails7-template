@@ -4,5 +4,5 @@
   </span>
 
   <% html_options.reverse_merge! class: base_css %>
-  <%= form.__send__("#{field_type}_field", method, **html_options) %>
+  <%= form.__send__(field_type, method, **html_options) %>
 </div>

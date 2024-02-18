@@ -1,10 +1,33 @@
-<p style="color: green"><%%= notice %></p>
+<%%= component 'ui/headings/h1', title: t('.title') %>
 
-<%%= render @<%= singular_table_name %> %>
+<div class="my-4">
+  <div class="grid grid-cols-1 gap-4 my-4">
+    <%%= component 'ui/card' do %>
+      <%%= component 'ui/table' do %>
+<% attributes.each do |attribute| -%>
+        <%%= component 'ui/table/row' do %>
+          <%%= component('ui/table/td'){ <%= class_name %>.human_attribute_name(:<%= attribute.column_name %>) } %>
+          <%%= component('ui/table/td'){ @<%= singular_table_name %>.<%= attribute.column_name %> } %>
+        <%% end %>
+<% end -%>
+      <%% end %>
 
-<div>
-  <%%= link_to "Edit this <%= human_name.downcase %>", <%= edit_helper(type: :path) %> %> |
-  <%%= link_to "Back to <%= human_name.pluralize.downcase %>", <%= index_helper(type: :path) %> %>
+      <div class="flex justify-between space-x-2">
+        <%%= link_to <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, data: { confirm: t('.confirm.destroy') } do %>
+          <%%= component 'ui/button', label: t('.destroy'), style: 'destructive' %>
+        <%% end %>
+        <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) do %>
+          <%%= component 'ui/button', label: t('.edit') %>
+        <%% end %>
+      </div>
+    <%% end %>
 
-  <%%= button_to "Destroy this <%= human_name.downcase %>", <%= model_resource_name(prefix: "@") %>, method: :delete %>
+    <div class="flex justify-end">
+      <%%= link_to <%= plural_table_name %>_path do %>
+        <%%= component 'ui/button', label: t('.back'), style: 'teritary' %>
+      <%% end %>
+    </div>
+
+  </div>
 </div>
+
