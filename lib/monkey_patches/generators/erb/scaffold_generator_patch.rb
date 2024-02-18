@@ -17,4 +17,7 @@ if ARGV.size > 0 and ARGV[0].start_with? "scaffold"
   end
 
   Erb::Generators::ScaffoldGenerator.prepend(MonkeyPatches::Generators::Erb::ScaffoldGeneratorPatch)
+else
+  module MonkeyPatches::Generators::Erb::ScaffoldGeneratorPatch
+  end
 end
