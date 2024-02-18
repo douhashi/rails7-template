@@ -1,7 +1,7 @@
 if ARGV.size > 0 and ARGV[0].start_with? "scaffold"
   require 'rails/generators/erb/scaffold/scaffold_generator'
 
-  module ScaffoldGeneratorPatch
+  module MonkeyPatches::Generators::Erb::ScaffoldGeneratorPatch
     def self.prepended(base)
       base.source_paths << Rails.root.join('lib/templates/erb/scaffold')
     end
@@ -16,5 +16,5 @@ if ARGV.size > 0 and ARGV[0].start_with? "scaffold"
     end
   end
 
-  Erb::Generators::ScaffoldGenerator.prepend(ScaffoldGeneratorPatch)
+  Erb::Generators::ScaffoldGenerator.prepend(MonkeyPatches::Generators::Erb::ScaffoldGeneratorPatch)
 end
