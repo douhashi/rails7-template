@@ -11,8 +11,8 @@ Capybara.register_driver :chrome_headless do |app|
   options.add_argument('--disable-dev-shm-usage')
   options.add_argument('--disable-gpu')
   options.add_argument('--window-size=1400,1400')
-  # FIXME if Chrome 122 has released
-  options.browser_version = '120'
+  # To specify the browser version, assign the version number as a string.
+  options.browser_version = nil
 
   Capybara::Selenium::Driver.new(app, browser: browser, url: url, options: options)
 end
