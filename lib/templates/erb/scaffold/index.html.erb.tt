@@ -8,6 +8,7 @@
 
         <%%= component 'ui/table/thead' do %>
           <%%= component 'ui/table/row' do %>
+            <%%= component('ui/table/th'){ <%= class_name %>.human_attribute_name(:id) } %>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
             <%%= component('ui/table/th'){ <%= class_name %>.human_attribute_name(:<%= attribute.column_name %>) } %>
 <% end -%>
@@ -18,8 +19,9 @@
         <%%= component 'ui/table/tbody' do %>
           <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
             <%%= component 'ui/table/row' do %>
+              <%%= component('ui/table/td') do %><%%= <%= singular_table_name %>.id %><%% end %>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
-              <%%= component('ui/table/td'){ <%= singular_table_name %>.<%= attribute.column_name %> } %>
+              <%%= component('ui/table/td') do %><%%= <%= singular_table_name %>.<%= attribute.column_name %> %><%% end %>
 <% end -%>
               <%%= component('ui/table/td') do %>
                 <%%= link_to <%= singular_table_name %> do %>
