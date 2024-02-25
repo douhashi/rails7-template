@@ -1,0 +1,13 @@
+<div id="<%%= dom_id <%= singular_table_name %> %>" class="mb-4">
+<% attributes.each do |attribute| -%>
+  <div class="flex justify-start items-center w-full border-b p-4">
+    <div class="w-1/3">
+      <%%= component('ui/paragraph', weight: 'semibold') do %><%%= <%= class_name %>.human_attribute_name(:<%= attribute.column_name %>) %><%% end %>
+    </div>
+    <div class="w-2/3">
+      <%%= component('ui/paragraph') do %><%%= <%= singular_table_name %>.<%= attribute.column_name %> %><%% end %>
+    </div>
+  </div>
+<% end -%>
+</div>
+
