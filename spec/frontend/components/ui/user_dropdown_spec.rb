@@ -2,11 +2,11 @@
 
 require "rails_helper"
 
-describe Ui::GlobalActionPanel::ProfileDropdown::Component do
+describe Ui::UserDropdown::Component do
   let(:username) { "John Doe" }
   let(:avatar_url) { "https://example.com/avatar.jpg" }
   let(:options) { { username: username, avatar_url: avatar_url } }
-  let(:component) { Ui::GlobalActionPanel::ProfileDropdown::Component.new(**options) }
+  let(:component) { Ui::UserDropdown::Component.new(**options) }
 
   subject { rendered_content }
 

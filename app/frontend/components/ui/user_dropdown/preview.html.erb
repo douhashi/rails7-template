@@ -1,5 +1,5 @@
 <div class="flex justify-end">
-<%= component 'ui/global_action_panel/profile_dropdown', username: username, avatar_url: avatar_url do |profile| %>
+<%= component 'ui/user_dropdown', username: username, avatar_url: avatar_url do |profile| %>
   <% profile.with_dropdown_content do %>
     <div class="p-2">
       dropdown content
