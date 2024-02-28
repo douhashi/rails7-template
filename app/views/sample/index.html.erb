@@ -5,6 +5,8 @@
 <div class="my-4">
   <%= component 'ui/headings/h2', title: 'Overview', subtitle: 'This template includes the following features.' %>
 
+  <%= component('ui/flash_message', flash: flash) %>
+
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 my-4">
     <%= component 'ui/card' do %>
       <%= component 'ui/card/header', title: 'view_component' %>

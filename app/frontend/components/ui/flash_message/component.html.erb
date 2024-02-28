@@ -1,0 +1,7 @@
+<div class="space-y-4">
+<% flash.each do |flash_type, message| %>
+  <div class="w-full shadow-lg rounded-lg p-4 <%= flash_type_color(flash_type) %>">
+    <p class="text-sm leading-5 font-medium"><%= message %></p>
+  </div>
+<% end %>
+</div>
