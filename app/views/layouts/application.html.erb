@@ -30,37 +30,13 @@
           <% end %>
         <% end %>
 
-        <div class="flex flex-col w-full md:space-y-4">
-          <%= component 'ui/global_action_panel' do |panel| %>
-            <div class="hidden lg:flex items-center space-x-4 hidden ">
-              <%= component 'ui/global_action_panel/icon_button', icon: 'fa-plus', url: '#' %>
-              <%= component 'ui/global_action_panel/icon_button', icon: 'fa-home', url: '#' %>
-              <%= component 'ui/global_action_panel/icon_button', icon: 'fa-lightbulb', url: '#' %>
-            </div>
-
-            <span class="hidden lg:block w-1 h-8 bg-gray-300 dark:bg-gray-600 rounded-lg"></span>
-
-            <%= component 'ui/global_action_panel/profile_dropdown', avatar_url: 'https://place-hold.it/100x100/', username: 'John Doe' do |profile| %>
-              <%= profile.with_dropdown_content do %>
-                <%= link_to '#', class: 'block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600' do %>
-                  <%= component 'ui/icon_label', icon: 'fa-user', label: 'Profile' %>
-                <% end %>
-                <%= link_to '#', class: 'block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600' do %>
-                  <%= component 'ui/icon_label', icon: 'fa-cog', label: 'Settings' %>
-                <% end %>
-                <%= link_to '#', class: 'block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600' do %>
-                  <%= component 'ui/icon_label', icon: 'fa-sign-out-alt', label: 'Sign out' %>
-                <% end %>
-              <% end %>
-            <% end %>
-
-          <% end %>
 
           <div class="h-screen px-4 pb-24 overflow-auto md:px-6">
+            <%= render partial: 'layouts/shared/main_header' %>
+
             <%= yield %>
           </div>
         </div>
-      </div>
     </main>
 
   </body>

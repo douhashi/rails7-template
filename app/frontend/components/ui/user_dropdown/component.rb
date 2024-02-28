@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Ui::GlobalActionPanel::ProfileDropdown::Component < ApplicationViewComponent
+class Ui::UserDropdown::Component < ApplicationViewComponent
   option :username
   option :avatar_url
   
