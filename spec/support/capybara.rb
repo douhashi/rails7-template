@@ -2,7 +2,8 @@ require 'capybara/rspec'
 require 'selenium-webdriver'
 
 Capybara.register_driver :chrome_headless do |app|
-  browser = ENV['SELENIUM_DRIVER_URL'] ? :remote : :chrome
+  url = ENV['SELENIUM_DRIVER_URL']
+  browser = url ? :remote : :chrome
 
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('--headless')
